@@ -1,0 +1,219 @@
+OS(operating system)
+===
+Linux - we need to have server - VM or Cloud
+
+
+Pre -requirements
+1. AWS Free account - 1year free 750 hrs
+
+
+Linux
+===============================
+
+1. EC2 - (Elastic Compute cloud) its a VM server 
+
+
+SSH -- Secure shell host
+Putty gen
+
+key pairs 
+=============================
+1. public key pair - pem file - aws account
+2. private key - ppk(putty private key)- we need to creat private key which we can store to connect securely of our aws server
+
+How to convert with private key by using public key
+===============================================================
+
+connet with the putty server
+=======================================
+
+
+Linux Commands
+============================================
+1  pwd -- Present working directory
+2  sudo -i -- change to Root user
+3  exit -- change back to home user  
+4  ls -- list of directory or files
+  a ls -l -- 
+  b ls - al --
+5  rm -f or -rf -- delete file or directory (-f  or -rf is recursively force)
+6  mkdir -- make a directory (diectory is also called Folder) (directory are shown in blue colour)
+ a mkdir -p -- to creat directory and sub dirctory at same time
+7  touch (file name) -- to creat a file ( files are shown in white colour)
+8  clear -- clear's the window
+9  cd -- change directory (to enter into specific file or directory)
+10 cd .. -- back from the present file or directory
+11 useradd (name) -- to add the new user 
+12 cat - to view content in the file
+13 wc -l -- shows the no of lines in the code
+14 wc -w -- hows the no of words in the code
+15 cat /etc/os-release - it shows the flavour of linux with more details
+
+
+Permissions and Rights
+==============================
+linux is the multi user OS which can be accessed by many user simultaneously.
+
+there are 2 types of permission they are 
+1 Ownership   -- chown
+ user created
+ given the permission
+
+ group level
+ =============
+  chgrp
+
+recursively to change the ownership of directories and their contents
+chown -R root (file name)
+ 
+2 Permissions -- chmod
+
+r - read   -4
+w - write  -2
+x - Excute -1
+
+d -rw-      r--           r--          
+  user      group         others
+   6         4              2
+
+Vim Editor
+====================
+vim has 3 modes 
+1 Command Mode 
+2 Insert Mode 
+3 Extended Mode
+
+Note: when you open the vim editor, it will be in the command mode by default.
+
+Insert Mode i
+
+Extended mode
+
+save esc:wq! withoutsave- esc:ql
+
+Command Mode
+===============================
+
+gg -to go to the beginning of the page 
+Shift+g -go to the end of the page
+w - to move the cursor forward, word by word 
+b- to move the cursor backword, word by word
+nw - to move the cursor forward to n words (5W)
+nb - to move the cursor backend to n words (5W) 
+u - to undo last change (word)
+Ctrl+u - to undo previous chnages (entire line)
+Ctrl+r - to redo changes 
+yy - to copy a line
+nyy - to copy n lines (5yy or 4yy) 
+p - to past line below the cursor position
+P - to past line above the cursor positio
+dw - delete the word letter by letter (like Backspace) 
+x - to delete the word letter by letter( delete key)
+dd -to delete entire line
+ndd - to delete n no.of positions from cursor positions (5dd) 
+/ - To search a word in the file
+
+
+Insert Mode (edit mode):
+==================================================
+
+i - To begin Insert Mode
+I - To insert beginning of line a To Append the next word's letter
+A - To append at the end of the line
+o - To insert a new line below the cursor positions
+0 To insert a new line Above the cursor positions
+
+Extended Mode (colon Mode):
+===============================
+
+Esc+:w To save the changes save)
+Esc+:q! to quit(without 
+Esc+:wq to save and quit
+Esc+:wl To save forcefully
+Esc+:wq! To save and quite forcefully
+Esc+:x to save and quit
+Esc+:X to give password to the file and remove password 
+Esc+:20(n) to go to line no 20 or n
+Esc+: se nu to set the line numbers to the file 
+Esc+:se nonu - To remove the set line number
+
+Monitoring:
+=======================
+- when you needs to see the running process on your linux in real time, you can have top as your tool that.
+
+- top also displayes other info besides the running process
+
+top
+
+tasks- shows the numbe of process and their current state
+%cpu- show CPU uilizaion details, user process, system process running, system Idle cpu
+
+Swap Memory in Linux:
+=====================================
+Swap space in Linux is used when the amount of physical memory (RAM) is full. If the system needs more memory resources and the RAM is full, inactive pages in memory are moved to swap space.
+While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM.
+
+zombie process in linux:
+==========================================
+Zombie processes in Linux are sometimes also referred to as defunct or dead processes. 
+They're processes that have completed their execution, but their entries are not removed from the process table.
+
+What is buff cache Linux?
+=============================
+buff/cache is memory used by the Linux kernel buffers and page cache. 
+You force clear buff/cache using the "echo" command but observe it gradually increase again to 85% memory consumption. 
+Shutting down the SAP NW application and/or database server. does not show buff/cache release any memory.
+
+What is inode in linux?
+===========================
+By definition, an inode is an index node. It serves as a unique identifier for a specific piece of metadata on a given filesystem. Each piece of metadata describes what we think of as a file. That's right, inodes operate on each filesystem, independent of the others.
+
+why inode in linux
+===============================
+Inodes help the system organize data. Even though inodes don't store the actual content of the file, they hold the locations of the various chunks for every file, along with other metadata, including: The size of the file. Various storage devices and locations where files are stored.
+
+What is a softlink 
+==============================================
+A soft link is similar to the file shortcut feature which is used in Windows Operating systems.
+Each soft linked file contains a separate Inode value that points to the original file. 
+As similar to hard links, any changes to the data in either file is reflected in the other.
+
+Waht is hardlink 
+=====================================================
+Every file on the linux filesystem starts with a single hard link.
+the link between the file name and the actual data is stored on the file system.
+
+what is hardening
+==================================
+Operating system (OS) hardening, a type of system hardening, is the process of implementing security measures and patching for operating systems, such as Windows, Linux, or Apple OS X, with the objective of protecting sensitive computing systems.
+
+What is the diff b/w grep and find
+============================================
+The main difference between the two is that grep is used to search for a particular string in a file whereas find is used to locate files in a directory, etc. 
+also you might want to check out the two commands by typing 'man find' and 'man grep
+
+What is the linus volumes
+=======================================
+A physical volume will be seen as /dev/sda, /dev/sdb; a physical disk that is detected by Linux. 
+If we have two physical disks of 1TB each, we can create a volume group of almost 2TB amongst the two. 
+From the volume group, we can create three logical volumes each of any-size not exceeding the total volume group size.
+
+volume types
+==========================
+linear volumes 
+striped volumes
+mirrored volumes
+
+Use of LVM in linux in linux
+==================================================
+LVM is used for the following purposes: Creating single logical volumes of multiple physical volumes or entire hard disks (somewhat similar to RAID 0, but more similar to JBOD), allowing for dynamic volume resizing.
+
+
+
+Software management
+===========================================
+its imp role in installing and config the software
+
+yum - yellow dog update manager - centos
+rpm - redhat pacakage manager
+apt-get - ubuntu
